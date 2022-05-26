@@ -29,6 +29,7 @@
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
 /*
  * File: betty.cpp
  *
@@ -166,19 +167,21 @@ void OSC_CYCLE(const user_osc_param_t * const params, int32_t *yn, const uint32_
               voice.duck = true;
             }
 
-            voice.pNxtData = samples[(v * 4) + (i - 2)].pData;
+            uint16_t t = (v * 4) + (i - 2);
+
+            voice.pNxtData = samples[t].pData;
             voice.stp = 0;
             voice.dly = (seq.stepIdx & 1) * 2;
             if (ptrns[p.ptrnIdx[v]][v][0] & ((0b1000000000000000) >> seq.stepIdx)) {
-              voice.divInit = samples[(v * 4) + (i - 2)].divAc; 
+              voice.divInit = samples[t].divAc; 
             } else {
-              voice.divInit = samples[(v * 4) + (i - 2)].div; 
+              voice.divInit = samples[t].div; 
             }
         
             if (ptrns[p.ptrnIdx[v]][v][1] & ((0b1000000000000000) >> seq.stepIdx)) {
-               voice.rate = samples[(v * 4) + (i - 2)].rate * 0.5; 
+               voice.rate = samples[t].rate * 0.5; 
             } else {
-               voice.rate = samples[(v * 4) + (i - 2)].rate; 
+               voice.rate = samples[t].rate; 
             }
 #ifdef RETRIG            
             voice.retrigCnt = 0;
