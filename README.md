@@ -7,7 +7,13 @@ Rhythms / patterns each contains 16 steps and are triggered (advanced) by pressi
 **A + B** encoders are used to control the amount of ducking (triggered by the kick) and tuning.
 Accessing the **oscillator parameters**, a pattern (1-16, 17 empty) can be selected for each of the sample groups (**A/B/C**). Random pattern allocation is achieved by changing the **rnd** parameter. 
 
+
+### MK-I 
 Upload [betty.ntkdigunit](betty.ntkdigunit) using the NTS-1 digital Librarian application.
+
+### MK-II
+Upload [bettymk2.nts1mkiiunit](bettymk2.nts1mkiiunit) using the KORG Kontrol Editor application.
+
 
 A short demonstration can be viewed here:
 
